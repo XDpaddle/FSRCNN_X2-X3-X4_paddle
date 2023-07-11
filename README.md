@@ -40,8 +40,8 @@ python train.py --train-file "/root/autodl-tmp/paddle-FSRCNN/SR/BLAH_BLAH/91-ima
 
 
 
-## Test
-权重文件位置：/root/autodl-tmp/paddle-FSRCNN/SR/BLAH_BLAH/outputs
+- ## Test
+权重文件位置：BLAH_BLAH/outputs
 
 ​```bash
 python test.py --weights-file "/root/autodl-tmp/paddle-FSRCNN/SR/BLAH_BLAH/outputs/x3/best.pdiparams" \
