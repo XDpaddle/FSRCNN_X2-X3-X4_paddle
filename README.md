@@ -28,8 +28,8 @@ The 91-image, Set5 dataset converted to HDF5 can be downloaded from the links be
 Otherwise, you can use `prepare.py` to create custom dataset.
 
 ```bash
-python train.py --train-file "/root/autodl-tmp/paddle-FSRCNN/SR/BLAH_BLAH/91-image_x4.h5" \
-                --eval-file "/root/autodl-tmp/paddle-FSRCNN/SR/BLAH_BLAH/Set5_x4.h5" \
+python train.py --train-file "BLAH_BLAH/91-image_x4.h5" \
+                --eval-file "BLAH_BLAH/Set5_x4.h5" \
                 --outputs-dir "BLAH_BLAH/outputs" \
                 --scale 4 \
                 --lr 1e-3 \
@@ -44,7 +44,7 @@ python train.py --train-file "/root/autodl-tmp/paddle-FSRCNN/SR/BLAH_BLAH/91-ima
 权重文件位置：BLAH_BLAH/outputs
 
 ```bash
-python test.py --weights-file "/root/autodl-tmp/paddle-FSRCNN/SR/BLAH_BLAH/outputs/x3/best.pdiparams" \
+python test.py --weights-file "BLAH_BLAH/outputs/x3/best.pdiparams" \
                --image-file "data/butterfly_GT.bmp" \
                --scale 3
 ```
@@ -60,3 +60,37 @@ PSNR was calculated on the Y channel.
 
 | PSNR      | 3     | 28.68 | 28.00 |
 
+<table>
+    <tr>
+        <td><center>Original</center></td>
+        <td><center>BICUBIC x3</center></td>
+        <td><center>FSRCNN x3 (34.66 dB)</center></td>
+    </tr>
+    <tr>
+    	<td>
+    		<center><img src="./data/lenna.bmp""></center>
+    	</td>
+    	<td>
+    		<center><img src="./data/lenna_bicubic_x3.bmp"></center>
+    	</td>
+    	<td>
+    		<center><img src="./data/lenna_fsrcnn_x3.bmp"></center>
+    	</td>
+    </tr>
+    <tr>
+        <td><center>Original</center></td>
+        <td><center>BICUBIC x3</center></td>
+        <td><center>FSRCNN x3 (28.55 dB)</center></td>
+    </tr>
+    <tr>
+    	<td>
+    		<center><img src="./data/butterfly_GT.bmp""></center>
+    	</td>
+    	<td>
+    		<center><img src="./data/butterfly_GT_bicubic_x3.bmp"></center>
+    	</td>
+    	<td>
+    		<center><img src="./data/butterfly_GT_fsrcnn_x3.bmp"></center>
+    	</td>
+    </tr>
+</table>
