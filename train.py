@@ -76,8 +76,8 @@ if __name__ == '__main__':
 
             for data in train_dataloader:
                 inputs, labels = data
-                inputs = inputs.to(device)
-                labels = labels.to(device)
+                inputs = inputs
+                labels = labels
                 
                 preds = model(inputs)
                 # print(paddle.shape(inputs),paddle.shape(labels),paddle.shape(preds))
@@ -101,8 +101,8 @@ if __name__ == '__main__':
         for data in eval_dataloader:
             inputs, labels = data
 
-            inputs = inputs.to(device)
-            labels = labels.to(device)
+            inputs = inputs
+            labels = labels
 
             with paddle.no_grad():
                 preds = model(inputs).clip(0.0, 1.0)
